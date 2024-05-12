@@ -68,7 +68,7 @@ fun MovieList(
             MovieRow(
                 movie = movie,
                 onFavoriteClick = {movieId ->
-                    viewModel.toggleFavoriteMovie(movieId)
+                    viewModel.toggleFavoriteMovie(movieId)      //?
                 },
                 onItemClick = { movieId ->
                     navController.navigate(route = Screen.DetailScreen.withId(movieId))

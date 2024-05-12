@@ -1,8 +1,10 @@
 package com.example.movieappmad24.models
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
+import androidx.room.Relation
 
 @Entity
 data class Movie(
@@ -20,6 +22,24 @@ data class Movie(
     val trailer: String,
     val rating: String,
     var isFavorite: Boolean = false
+)
+
+@Entity
+data class MovieImage(
+    @PrimaryKey
+    val id: Long,
+    val url: String,
+    val movieId: Long
+)
+
+@Entity
+data class MovieWithImages(
+    @Embedded val movie: Movie,
+    @Relation(
+        parentColumn = "id",
+        entityColumn = "movieId"
+    )
+    val images: List<MovieImage>
 )
 
 fun getMovies(): List<Movie> {

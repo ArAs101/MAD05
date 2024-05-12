@@ -16,4 +16,12 @@ class MovieRepository(private val movieDao: MovieDao) {
     fun getFavoriteMovies(): Flow<List<Movie>> = movieDao.getFavorites()
 
     fun getById(id: Long): Flow<Movie?> = movieDao.get(id)
+
+    /*suspend fun toggleFavorite(movie: Movie) {
+        if (movie.isFavorite) {
+            deleteMovie(movie)
+        } else {
+            addMovie(movie)
+        }
+    }*/
 }

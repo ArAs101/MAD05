@@ -32,6 +32,7 @@ import com.example.movieappmad24.viewmodels.MoviesViewModel
 import com.example.movieappmad24.widgets.HorizontalScrollableImageView
 import com.example.movieappmad24.widgets.MovieRow
 import com.example.movieappmad24.widgets.SimpleTopAppBar
+import kotlinx.coroutines.flow.filter
 
 @Composable
 fun DetailScreen(
